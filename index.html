@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fefefe;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-box {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .keypad-section h4 {
+      font-weight: 600;
+      color: #5a69d3;
+      margin-bottom: 20px;
+    }
+
+    .keypad-input {
+      width: 100%;
+      max-width: 250px;
+      height: 40px;
+      background-color: #fbd1f6;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #5a69d3;
+      letter-spacing: 5px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 250px;
+      margin: auto;
+    }
+
+    .keypad button {
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 12px;
+      border: none;
+      background-color: #fff;
+      color: #cc6ddf;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+
+    .keypad button:hover {
+      background-color: #f2e9f7;
+    }
+
+    #alertBox {
+      max-width: 300px;
+      margin: 15px auto;
+    }
+
+    @media (max-width: 768px) {
+      .keypad-section {
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container-box {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+
+      .keypad button {
+        padding: 12px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container container-box">
+    <div class="row align-items-center">
+      <!-- Left side: image -->
+      <div class="col-lg-6 col-md-6 col-sm-12 photo-box">
+        <img src="images/pic2.JPG" alt="Mirror Selfie">
+      </div>
+
+      <!-- Right side: keypad -->
+      <div class="col-lg-6 col-md-6 col-sm-12 keypad-section text-center">
+        <h4>Enter our password</h4>
+
+        <!-- Alert message -->
+        <div id="alertBox"></div>
+
+        <!-- Password display -->
+        <div class="keypad-input" id="displayInput"></div>
+
+        <!-- Keypad buttons -->
+        <div class="keypad">
+          <button onclick="pressKey('1')">1</button>
+          <button onclick="pressKey('2')">2</button>
+          <button onclick="pressKey('3')">3</button>
+          <button onclick="pressKey('4')">4</button>
+          <button onclick="pressKey('5')">5</button>
+          <button onclick="pressKey('6')">6</button>
+          <button onclick="pressKey('7')">7</button>
+          <button onclick="pressKey('8')">8</button>
+          <button onclick="pressKey('9')">9</button>
+          <button onclick="clearInput()">←</button>
+          <button onclick="pressKey('0')">0</button>
+          <button onclick="submitPassword()">✔</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let passwordInput = "";
+    const correctPassword = "2009";
+
+    function pressKey(key) {
+      if (passwordInput.length >= 10) return; // Limit input length
+      passwordInput += key;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('displayInput');
+      display.textContent = '*'.repeat(passwordInput.length);
+    }
+
+    function clearInput() {
+      passwordInput = passwordInput.slice(0, -1);
+      updateDisplay();
+    }
+
+    function submitPassword() {
+      if (passwordInput === correctPassword) {
+        window.location.href = "nextpage.html"; // Success page
+      } else {
+        showAlert("Incorrect password. Try again.");
+        passwordInput = "";
+        updateDisplay();
+      }
+    }
+
+    function showAlert(message) {
+      const alertBox = document.getElementById("alertBox");
+      alertBox.innerHTML = `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          ${message}
+        </div>
+      `;
+      setTimeout(() => {
+        alertBox.innerHTML = "";
+      }, 5000); // Auto-dismiss after 5 seconds
+    }
+  </script>
+
+</body>
+</html>

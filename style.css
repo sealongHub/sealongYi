@@ -1,0 +1,80 @@
+body {
+      background-color: #fefefe;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-box {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .keypad-section h4 {
+      font-weight: 600;
+      color: #5a69d3;
+      margin-bottom: 20px;
+    }
+
+    .keypad-input {
+      width: 100%;
+      max-width: 250px;
+      height: 40px;
+      background-color: #fbd1f6;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #5a69d3;
+      letter-spacing: 5px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 250px;
+    }
+
+    .keypad button {
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 12px;
+      border: none;
+      background-color: #fff;
+      color: #cc6ddf;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+
+    .keypad button:hover {
+      background-color: #f2e9f7;
+    }
+
+    @media (max-width: 768px) {
+      .keypad-section {
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container-box {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+
+      .keypad button {
+        padding: 12px;
+        font-size: 18px;
+      }
+    }

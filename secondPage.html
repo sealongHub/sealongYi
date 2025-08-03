@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Long Together</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f9f0ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .container-box {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 6px 20px rgba(181, 126, 255, 0.3),
+        0 0 25px rgba(255, 105, 220, 0.2);
+    }
+
+    .profile-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 25px;
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 4px 15px rgba(255, 105, 220, 0.6),
+        inset 0 0 8px rgba(255, 255, 255, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .profile-img:hover {
+      box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.25),
+        0 6px 18px rgba(255, 105, 220, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .search-bar {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fdf0ff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      color: #b94fb4;
+      border: 1px solid #f2d2f8;
+      margin-bottom: 35px;
+      box-shadow:
+        0 6px 20px rgba(181, 126, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .countup {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .countup div {
+      background: #fff;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(181, 126, 255, 0.4),
+        0 0 10px rgba(255, 105, 220, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .countup div:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.2),
+        0 8px 20px rgba(181, 126, 255, 0.5),
+        0 0 15px rgba(255, 105, 220, 0.3);
+    }
+
+    .countup img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.15),
+        0 3px 10px rgba(181, 126, 255, 0.3);
+    }
+
+    .btn-next {
+      background-color: #ff5fc9;
+      border: none;
+      padding: 14px 50px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 25px;
+      cursor: pointer;
+      box-shadow:
+        0 10px 25px rgba(255, 95, 201, 0.7),
+        0 6px 16px rgba(255, 95, 201, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .btn-next:hover {
+      background-color: #ff3db8;
+      box-shadow:
+        0 14px 30px rgba(255, 61, 184, 0.8),
+        0 10px 25px rgba(255, 61, 184, 0.7),
+        inset 0 0 12px rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-icons {
+      font-size: 28px;
+      color: #ff69d4;
+      margin-top: 40px;
+      text-shadow:
+        1px 1px 2px #ffcdf3,
+        0 0 10px #ff7adf;
+    }
+
+    @media (max-width: 576px) {
+      .countup {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .countup div {
+        padding: 10px;
+      }
+
+      .btn-next {
+        font-size: 16px;
+        padding: 10px 35px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .countup {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-box">
+    <img src="https://i.pinimg.com/originals/21/ed/4f/21ed4f0ed02805fb8f050f4b487a6e40.gif" alt="Girl" class="profile-img" />
+
+    <div class="search-bar">Chanyi Kbal Khoch kmean pi ler lork..</div>
+     
+
+    <div class="countup" id="countup">
+      <div><img src="images/pic3.JPG" alt="pic"></div>
+      <div><img src="images/pic4.JPG" alt="pic"></div>
+      <div><img src="images/pic5.JPG" alt="pic"></div>
+      <div><img src="images/pic6.JPG" alt="pic"></div>
+      <div><img src="images/pic7.JPG" alt="pic"></div>
+      <div><img src="images/pic8.JPG" alt="pic"></div>
+    </div>
+
+    <button class="btn-next" id="nextBtn">Next</button>
+
+    
+  </div>
+
+  <script>
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      window.location.href = 'thirdPage.html';
+    });
+  </script>
+
+</body>
+</html>

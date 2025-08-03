@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Long Together</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f9f0ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .container-box {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 6px 20px rgba(181, 126, 255, 0.3),
+        0 0 25px rgba(255, 105, 220, 0.2);
+    }
+
+    .profile-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 25px;
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 4px 15px rgba(255, 105, 220, 0.6),
+        inset 0 0 8px rgba(255, 255, 255, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .profile-img:hover {
+      box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.25),
+        0 6px 18px rgba(255, 105, 220, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-next {
+      background-color: #ff5fc9;
+      border: none;
+      padding: 14px 50px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 25px;
+      cursor: pointer;
+      box-shadow:
+        0 10px 25px rgba(255, 95, 201, 0.7),
+        0 6px 16px rgba(255, 95, 201, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .btn-next:hover {
+      background-color: #ff3db8;
+      box-shadow:
+        0 14px 30px rgba(255, 61, 184, 0.8),
+        0 10px 25px rgba(255, 61, 184, 0.7),
+        inset 0 0 12px rgba(255, 255, 255, 0.5);
+    }
+
+    .text-shadow-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.1),
+        0 4px 12px rgba(181, 126, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .text-shadow-box p {
+      text-align: justify;
+      text-shadow: 0 1px 2px rgba(255, 105, 180, 0.4);
+      color: #333;
+      font-size: 17px;
+    }
+
+    @media (max-width: 576px) {
+      .btn-next {
+        font-size: 16px;
+        padding: 10px 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-box">
+    <img src="https://i.pinimg.com/originals/2d/7b/c3/2d7bc3bb00389ff13f55c5432b5bd5c5.gif" alt="Girl" class="profile-img" />
+
+    <div class="text-shadow-box">
+      <p>
+        Every day with you is better than the one before. I’m so excited about every morning knowing I get another day with you. You're the reason my life feels so full, so rich in love and happiness. Together, there's nothing we can't face. Your love energizes me, making every challenge worth facing, every joy even sweeter.
+      </p>
+      <p>
+        Falling in love with you is the second best thing in the world. Finding you was the first. Every day since has been a beautiful journey of discovering more about you and falling deeper in love. Our story is my favorite, and I can’t wait to see what the future holds. Each chapter we write together is filled with love and laughter, making our book the best story ever told.
+      </p>
+    </div>
+
+    <button class="btn-next" id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      window.location.href = 'fourPage.html';
+    });
+  </script>
+
+</body>
+</html>
